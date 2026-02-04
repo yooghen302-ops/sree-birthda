@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Sree 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  text-align:center;
+}
+
+#lock {
+  position:fixed;
+  inset:0;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+input {
+  padding:10px;
+  font-size:16px;
+}
+
+button {
+  padding:10px 20px;
+  margin-top:10px;
+  font-size:16px;
+}
+
+.container {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.envelope {
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+.envelope:hover {
+  transform:scale(1.05);
+}
+
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background:white;
+  margin:15% auto;
+  padding:20px;
+  width:90%;
+  max-width:400px;
+  border-radius:15px;
+}
+
+.close {
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="lock">
+<h2>For Sree Only 💖</h2>
+<input id="pass" type="password" placeholder="Enter password">
+<button onclick="unlock()">Open</button>
+</div>
+
+<h1>Happy Birthday Sree 💖</h1>
+<p>From Yooghen</p>
+
+<audio controls>
+<source src="thuli-thuli.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<div class="envelope" onclick="openNote(1)">💌 For You</div>
+<div class="envelope" onclick="openNote(2)">😂 First Memories</div>
+<div class="envelope" onclick="openNote(3)">🫠 Inside Jokes</div>
+<div class="envelope" onclick="openNote(4)">🥺 I'm Sorry</div>
+<div class="envelope" onclick="openNote(5)">❤️ Final Letter</div>
+
+</div>
+
+<div id="note1" class="modal"><div class="modal-content">
+<span class="close" onclick="closeNote(1)">×</span>
+<h3>For You, Sree 💌</h3>
+<p>Happy Birthday Sree ❤️<br><br>
+You mean more to me than you’ll ever know.<br>
+Beautiful inside and out.<br>
+I’m so grateful for you 💖</p>
+</div></div>
+
+<div id="note2" class="modal"><div class="modal-content">
+<span class="close" onclick="closeNote(2)">×</span>
+<h3>First Memories 😂</h3>
+<p>First proper talk in the van during ENT 🤡<br>
+First line ever: your parents anniversary 💀</p>
+</div></div>
+
+<div id="note3" class="modal"><div class="modal-content">
+<span class="close" onclick="closeNote(3)">×</span>
+<h3>Inside Jokes 🫠</h3>
+<p>The inch story 😭<br>
+Mental hospital candidates 🤪<br>
+Still pushing you into a pool 😎</p>
+</div></div>
+
+<div id="note4" class="modal"><div class="modal-content">
+<span class="close" onclick="closeNote(4)">×</span>
+<h3>I’m Sorry 🥺</h3>
+<p>I’m sorry for hurting you sometimes.<br>
+Thank you for staying and being kind ❤️</p>
+</div></div>
+
+<div id="note5" class="modal"><div class="modal-content">
+<span class="close" onclick="closeNote(5)">×</span>
+<h3>Final Letter ❤️</h3>
+<p>Thank you for being in my life.<br>
+Always wishing you happiness 💖<br><br>
+— Yooghen</p>
+</div></div>
+
+<script>
+function unlock(){
+  if(document.getElementById("pass").value==="poothu-inch"){
+    document.getElementById("lock").style.display="none";
+  } else {
+    alert("Wrong password 😛");
+  }
+}
+function openNote(n){
+  document.getElementById("note"+n).style.display="block";
+}
+function closeNote(n){
+  document.getElementById("note"+n).style.display="none";
+}
+</script>
+
+</body>
+</html>

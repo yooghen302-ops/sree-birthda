@@ -1,15 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Happy Birthday Sree 💖</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-  margin:0;
-  font-family: Arial;
-  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-  text-align:center;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.envelope {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.envelope:hover {
+  transform: scale(1.05);
+}
+
+.envelope span {
+  font-size: 40px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  animation: pop 0.4s;
+  text-align: left;
+}
+
+@keyframes pop {
+  from {transform: scale(0.5); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.note-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+audio {
+  margin-top: 15px;
 }
 
 #lock {
@@ -32,53 +112,12 @@ button {
   margin-top:10px;
   font-size:16px;
 }
-
-.container {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:20px;
-  padding:20px;
-}
-
-.envelope {
-  background:white;
-  border-radius:12px;
-  padding:20px;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  transition:0.3s;
-}
-
-.envelope:hover {
-  transform:scale(1.05);
-}
-
-.modal {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-}
-
-.modal-content {
-  background:white;
-  margin:15% auto;
-  padding:20px;
-  width:90%;
-  max-width:400px;
-  border-radius:15px;
-}
-
-.close {
-  float:right;
-  font-size:22px;
-  cursor:pointer;
-}
 </style>
 </head>
 
 <body>
 
+<!-- PASSWORD LOCK -->
 <div id="lock">
 <h2>For Sree Only 💖</h2>
 <input id="pass" type="password" placeholder="Enter password">
@@ -86,60 +125,116 @@ button {
 </div>
 
 <h1>Happy Birthday Sree 💖</h1>
-<p>From Yooghen</p>
+<div class="subtitle">From Yooghen, with love</div>
 
+<!-- MUSIC -->
 <audio controls>
-<source src="thuli-thuli.mp3" type="audio/mpeg">
+  <source src="thuli-thuli.mp3" type="audio/mpeg">
 </audio>
+<p><i>Tap play for Thuli Thuli 🎵</i></p>
 
+<!-- ENVELOPES -->
 <div class="container">
-
-<div class="envelope" onclick="openNote(1)">💌 For You</div>
-<div class="envelope" onclick="openNote(2)">😂 First Memories</div>
-<div class="envelope" onclick="openNote(3)">🫠 Inside Jokes</div>
-<div class="envelope" onclick="openNote(4)">🥺 I'm Sorry</div>
-<div class="envelope" onclick="openNote(5)">❤️ Final Letter</div>
-
+  <div class="envelope" onclick="openNote(1)"><span>💌</span><p>For You</p></div>
+  <div class="envelope" onclick="openNote(2)"><span>😂</span><p>First Memories</p></div>
+  <div class="envelope" onclick="openNote(3)"><span>🫠</span><p>Inside Jokes</p></div>
+  <div class="envelope" onclick="openNote(4)"><span>🥺</span><p>I'm Sorry</p></div>
+  <div class="envelope" onclick="openNote(5)"><span>❤️</span><p>Final Letter</p></div>
+  <div class="envelope" onclick="openNote(6)"><span>🎉</span><p>Are You Surprised?</p></div>
 </div>
 
-<div id="note1" class="modal"><div class="modal-content">
+<!-- NOTES -->
+
+<div id="note1" class="modal">
+<div class="modal-content">
 <span class="close" onclick="closeNote(1)">×</span>
 <h3>For You, Sree 💌</h3>
-<p>Happy Birthday Sree ❤️<br><br>
-You mean more to me than you’ll ever know.<br>
-Beautiful inside and out.<br>
-I’m so grateful for you 💖</p>
-</div></div>
+<p>
+Happy Birthday Sree ❤️<br><br>
+I don’t even know where to start because there’s honestly so much I want to say.<br>
+You genuinely mean more to me than you’ll ever understand.<br>
+Not just as a friend, but as someone who has become such an important part of my life.<br><br>
+You’re not just beautiful on the outside — your heart is even more beautiful.<br>
+You’re kind in ways people don’t notice, patient in ways people don’t deserve, and rare in a world where everyone is replaceable.<br><br>
+I’m really grateful that you exist in my life, and I’m even more grateful that I get to call you my friend 💖
+</p>
+<img src="note1.jpg" class="note-img">
+</div>
+</div>
 
-<div id="note2" class="modal"><div class="modal-content">
+<div id="note2" class="modal">
+<div class="modal-content">
 <span class="close" onclick="closeNote(2)">×</span>
-<h3>First Memories 😂</h3>
-<p>First proper talk in the van during ENT 🤡<br>
-First line ever: your parents anniversary 💀</p>
-</div></div>
+<h3>Our First Memories 😂</h3>
+<p>
+I still clearly remember the first proper conversation we ever had — in the van during ENT 🤡<br>
+The very first line we ever spoke was during your parents’ anniversary 💀<br>
+Who starts a friendship like that?!<br><br>
+From that one random conversation to all the stupid talks, laughs, and nonsense after, I never thought you’d become this important to me. But here we are 😌
+</p>
+<img src="note2.jpg" class="note-img">
+</div>
+</div>
 
-<div id="note3" class="modal"><div class="modal-content">
+<div id="note3" class="modal">
+<div class="modal-content">
 <span class="close" onclick="closeNote(3)">×</span>
 <h3>Inside Jokes 🫠</h3>
-<p>The inch story 😭<br>
-Mental hospital candidates 🤪<br>
-Still pushing you into a pool 😎</p>
-</div></div>
+<p>
+The inch story… I will never forget it 😭<br>
+That story alone proves that both of us genuinely belong in a mental hospital 🤪<br>
+Your nickname “best good girl first priority poothu” will forever be legendary.<br>
+I still think one day I’ll successfully push you into a pool 😎<br>
+Honestly, no one else will ever understand our jokes, and that’s what makes them even funnier. Our kind of stupid is special.
+</p>
+<img src="note3.jpg" class="note-img">
+</div>
+</div>
 
-<div id="note4" class="modal"><div class="modal-content">
+<div id="note4" class="modal">
+<div class="modal-content">
 <span class="close" onclick="closeNote(4)">×</span>
 <h3>I’m Sorry 🥺</h3>
-<p>I’m sorry for hurting you sometimes.<br>
-Thank you for staying and being kind ❤️</p>
-</div></div>
+<p>
+I’m really sorry for the times I treated you badly.<br>
+For the times I spoke without thinking.<br>
+For the times I might have hurt you, even if I didn’t mean to.<br><br>
+You never deserved that. Not even a little.<br>
+Thank you for being patient with me, staying, and not giving up on me ❤️
+</p>
+<img src="note4.jpg" class="note-img">
+</div>
+</div>
 
-<div id="note5" class="modal"><div class="modal-content">
+<div id="note5" class="modal">
+<div class="modal-content">
 <span class="close" onclick="closeNote(5)">×</span>
-<h3>Final Letter ❤️</h3>
-<p>Thank you for being in my life.<br>
-Always wishing you happiness 💖<br><br>
-— Yooghen</p>
-</div></div>
+<h3>My Final Letter ❤️</h3>
+<p>
+Sree, you’re truly special to me.<br>
+No matter where life takes us, I’ll always wish for your happiness, peace, and success.<br><br>
+Thank you for being in my life. Thank you for being my friend. Thank you for being YOU 💖<br><br>
+So… how did I surprise you? 😌<br>
+— Always, Yooghen 💖
+</p>
+<img src="note5.jpg" class="note-img">
+</div>
+</div>
+
+<div id="note6" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeNote(6)">×</span>
+<h3>Are You Surprised? 🎉</h3>
+<p>
+Surprised, Sree? 😌<br><br>
+I hope this little website made you smile, laugh, and feel special because you really are.<br>
+I hope you always stay happy, joyful, and surrounded by people who love you.<br>
+You deserve every good thing in life 💖<br>
+Always remember, you’re amazing, and I’m lucky to have you as a friend.
+</p>
+<img src="note6.jpg" class="note-img">
+</div>
+</div>
 
 <script>
 function unlock(){
@@ -149,9 +244,11 @@ function unlock(){
     alert("Wrong password 😛");
   }
 }
+
 function openNote(n){
   document.getElementById("note"+n).style.display="block";
 }
+
 function closeNote(n){
   document.getElementById("note"+n).style.display="none";
 }
